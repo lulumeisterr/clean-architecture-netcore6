@@ -34,33 +34,35 @@ while (!exit)
         case (int)Operacoes.PESQUISAR_TODOS:
             Console.WriteLine("########## Usuários cadastrados ##########");
             User[] users = listUsers.Execute();
-            foreach (var user in users)
-                Console.WriteLine(user.Name);
+            if (users?.Length > 0)
+            {
+                foreach (var user in users)
+                    Console.WriteLine(user.Name);
+                continue;
+            }
+            Console.WriteLine("Sem registros para ser exibido");
             break;
         case (int)Operacoes.PESQUISAR_POR_NOME:
             Console.WriteLine("Digite o nome do usuário:");
             string searchName = Console.ReadLine();
             (int result, int position) = findUser.Execute(searchName);
             if (result == 1)
+            {
                 Console.WriteLine($"Usuário {searchName} encontrado na posição {position}.");
-            else
-                Console.WriteLine($"Usuário {searchName} não encontrado.");
+                continue;
+            }
+            Console.WriteLine($"Usuário {searchName} não encontrado.");
             break;
         case (int)Operacoes.DELETAR:
             Console.WriteLine("Digite o nome do usuário:");
             string deleteName = Console.ReadLine();
-            try
+            int deleteResult = removeUser.Execute(deleteName);
+            if (deleteResult == 1)
             {
-                var (deleteResult, updatedUsers) = removeUser.Execute(deleteName);
-                if (deleteResult == 1)
-                    Console.WriteLine($"Usuário {deleteName} excluído.");
-                else
-                    Console.WriteLine($"Usuário {deleteName} não encontrado.");
+                Console.WriteLine($"Usuário {deleteName} excluído.");
+                continue;
             }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine($"Erro ao excluir usuário: {ex.Message}");
-            }
+            Console.WriteLine($"Usuário {deleteName} não encontrado.");
             break;
         case (int)Operacoes.SAIR:
             Console.WriteLine("Prorama encerrado");

@@ -4,6 +4,6 @@ namespace CrudInMemory.Application.Interfaces
 {
     public interface IRemoveUser
     {
-        public (int result, User[] users) Execute(string userName);
+        public int Execute(string userName);
     }
 }

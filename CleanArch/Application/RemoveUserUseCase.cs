@@ -21,13 +21,14 @@ namespace CrudInMemory.Application
         }
 
         /// <summary>
-        /// 
+        /// Deletar usuario por nome
         /// </summary>
         /// <param name="userName"></param>
         /// <returns></returns>
-        public (int result, User[] users) Execute(string userName)
+        public int Execute(string userName)
         {
-            return _userRepository.Remove(userName);
+            (int result, User[] users) = _userRepository.Remove(userName);
+            return result;
         }
     }
 }

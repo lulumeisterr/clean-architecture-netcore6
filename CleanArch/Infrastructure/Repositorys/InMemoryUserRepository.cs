@@ -49,8 +49,9 @@ namespace CrudInMemory.Infrastructure.Repositorys
             (int resultado, int posicao) = _users.FindByNameBinarySearch(name);
             if (resultado != 1)
                 return (0, _users.ToArray());
-            _users.Remove(name);
-            return (1, _users.ToArray());
+            (int result, User[] resize) = _users.Remove(name);
+            _users = resize;
+            return (result,resize);
         }
     }
 }
