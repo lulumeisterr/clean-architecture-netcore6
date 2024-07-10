@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudInMemory", "..\ConsoleApp1\CrudInMemory.csproj", "{B188D768-097E-489D-B2DC-56E50E0D74F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clean Architecture", "Clean Architecture", "{4058CC61-6639-4249-889A-8C67585195EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteUnitario", "TesteUnitario\TesteUnitario.csproj", "{97A8DD2C-28AD-49AA-9AA8-840A3F203470}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B188D768-097E-489D-B2DC-56E50E0D74F1} = {B188D768-097E-489D-B2DC-56E50E0D74F1}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9EB00A3B-C646-4F52-8AEE-19436F9C8B33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B188D768-097E-489D-B2DC-56E50E0D74F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B188D768-097E-489D-B2DC-56E50E0D74F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B188D768-097E-489D-B2DC-56E50E0D74F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B188D768-097E-489D-B2DC-56E50E0D74F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97A8DD2C-28AD-49AA-9AA8-840A3F203470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A8DD2C-28AD-49AA-9AA8-840A3F203470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A8DD2C-28AD-49AA-9AA8-840A3F203470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97A8DD2C-28AD-49AA-9AA8-840A3F203470}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B188D768-097E-489D-B2DC-56E50E0D74F1} = {4058CC61-6639-4249-889A-8C67585195EF}
+		{97A8DD2C-28AD-49AA-9AA8-840A3F203470} = {9EB00A3B-C646-4F52-8AEE-19436F9C8B33}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E54C7A1-4F64-43D4-9711-5864A6111402}
+	EndGlobalSection
+EndGlobal
