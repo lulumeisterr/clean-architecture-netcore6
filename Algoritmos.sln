@@ -10,7 +10,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteUnitario", "TesteUnita
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9EB00A3B-C646-4F52-8AEE-19436F9C8B33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudInMemory", "Application\CrudInMemory.csproj", "{E9998ECB-5CD7-40EC-BD9F-59C295269041}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudInMemory", "CleanArch\CrudInMemory.csproj", "{E9998ECB-5CD7-40EC-BD9F-59C295269041}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

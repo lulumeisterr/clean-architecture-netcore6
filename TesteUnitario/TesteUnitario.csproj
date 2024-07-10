@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application\CrudInMemory.csproj" />
+    <ProjectReference Include="..\CleanArch\CrudInMemory.csproj" />
   </ItemGroup>
 
 </Project>
