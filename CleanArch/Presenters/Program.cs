@@ -25,53 +25,57 @@ while (!exit)
     int option = int.Parse(Console.ReadLine());
     switch (option)
     {
-        case (int)Operacoes.ADICIONAR:
-            Console.WriteLine("Digite o nome do usuário:");
-            string userName = Console.ReadLine();
-            registerUser.Execute(userName);
-            Console.WriteLine("Usuário cadastrado.");
-            break;
-        case (int)Operacoes.PESQUISAR_TODOS:
-            Console.WriteLine("########## Usuários cadastrados ##########");
-            User[] users = listUsers.Execute();
-            if (!(users?.Length > 0))
-            {
-                Console.WriteLine("Sem registros para ser exibido");
-                break;
-            }
-            foreach (User user in users)
-                Console.WriteLine(user.Name);
-            continue;
-        case (int)Operacoes.PESQUISAR_POR_NOME:
-            Console.WriteLine("Digite o nome do usuário:");
-            string searchName = Console.ReadLine();
-            (int result, int position) = findUser.Execute(searchName);
-            if (result == 1)
-            {
-                Console.WriteLine($"Usuário {searchName} encontrado na posição {position}.");
-                continue;
-            }
-            Console.WriteLine($"Usuário {searchName} não encontrado.");
-            break;
-        case (int)Operacoes.DELETAR:
-            Console.WriteLine("Digite o nome do usuário:");
-            string deleteName = Console.ReadLine();
-            int deleteResult = removeUser.Execute(deleteName);
-            if (deleteResult == 1)
-            {
-                Console.WriteLine($"Usuário {deleteName} excluído.");
-                continue;
-            }
-            Console.WriteLine($"Usuário {deleteName} não encontrado.");
-            break;
-        case (int)Operacoes.SAIR:
-            Console.WriteLine("Prorama encerrado");
-            exit = true;
-            break;
-        default:
-            Console.WriteLine("Opção invalida..");
-            break;
+        case (int)Operacoes.ADICIONAR: RegisterUser(registerUser); break;
+        case (int)Operacoes.PESQUISAR_TODOS: ListUsers(); break;
+        case (int)Operacoes.PESQUISAR_POR_NOME: FindUser(); break;
+        case (int)Operacoes.DELETAR: RemoveUser(); break;
+        case (int)Operacoes.SAIR: exit = true; break;
+        default: Console.WriteLine("Opção invalida.."); break;
     }
+}
+
+void RegisterUser(IRegisterUser registerUser)
+{
+    Console.WriteLine("Digite o nome do usuário:");
+    string userName = Console.ReadLine();
+    registerUser.Execute(userName);
+    Console.WriteLine("Usuário cadastrado.");
+}
+void ListUsers()
+{
+    Console.WriteLine("########## Usuários cadastrados ##########");
+    User[] users = listUsers.Execute();
+    if (!(users?.Length > 0))
+    {
+        Console.WriteLine("Sem registros para ser exibido");
+        return;
+    }
+    foreach (User user in users)
+        Console.WriteLine(user.Name);
+}
+void FindUser()
+{
+    Console.WriteLine("Digite o nome do usuário:");
+    string searchName = Console.ReadLine();
+    (int result, int position) = findUser.Execute(searchName);
+    if (result == 1)
+    {
+        Console.WriteLine($"Usuário {searchName} encontrado na posição {position}.");
+        return;
+    }
+    Console.WriteLine($"Usuário {searchName} não encontrado.");
+}
+void RemoveUser()
+{
+    Console.WriteLine("Digite o nome do usuário:");
+    string deleteName = Console.ReadLine();
+    int deleteResult = removeUser.Execute(deleteName);
+    if (deleteResult == 1)
+    {
+        Console.WriteLine($"Usuário {deleteName} excluído.");
+        return;
+    }
+    Console.WriteLine($"Usuário {deleteName} não encontrado.");
 }
 enum Operacoes
 {
