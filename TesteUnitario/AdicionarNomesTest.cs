@@ -29,7 +29,7 @@ namespace TesteUnitario.Adicionar
         }
 
         [TestMethod]
-        public void Nao_Deve_Adicionar_Nome_Usuario_Com_Sucesso()
+        public void Nao_Deve_Adicionar_Nome_Usuario_Com_Error()
         {
             //Given
             IUserRepository userRepository = new InMemoryUserRepository();
