@@ -34,14 +34,14 @@ while (!exit)
         case (int)Operacoes.PESQUISAR_TODOS:
             Console.WriteLine("########## Usuários cadastrados ##########");
             User[] users = listUsers.Execute();
-            if (users?.Length > 0)
+            if (!(users?.Length > 0))
             {
-                foreach (var user in users)
-                    Console.WriteLine(user.Name);
-                continue;
+                Console.WriteLine("Sem registros para ser exibido");
+                break;
             }
-            Console.WriteLine("Sem registros para ser exibido");
-            break;
+            foreach (User user in users)
+                Console.WriteLine(user.Name);
+            continue;
         case (int)Operacoes.PESQUISAR_POR_NOME:
             Console.WriteLine("Digite o nome do usuário:");
             string searchName = Console.ReadLine();
