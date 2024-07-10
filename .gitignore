@@ -1,0 +1,12 @@
+# Ignorar diretórios binários compilados
+bin/
+obj/
+
+# Outros arquivos e diretórios que geralmente são ignorados em projetos .NET
+*.user
+*.suo
+*.cache
+*.tmp
+*.log
+*.vscode
+.vs/
